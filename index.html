@@ -1,0 +1,623 @@
+<title>Nick Gholami &middot; Mechatronics</title>
+<meta name="description" content="Engineering portfolio of Nick Gholami &mdash; hands-on mechatronics, robotics and control-systems projects." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+:root{
+  --bg:#eef1f4; --surface:#ffffff; --surface-2:#f3f6f9; --surface-3:#e9edf1;
+  --ink:#16202b; --ink-soft:#4c5a68; --ink-faint:#7a8896;
+  --line:#d3dae1; --line-strong:#bcc6ce;
+  --accent:#d24818; --accent-soft:#f6e5dd; --on-accent:#ffffff;
+  --steel:#2f5d7c;
+  --shadow:0 1px 2px rgba(20,32,43,.06);
+  --shadow-lift:0 10px 30px -12px rgba(20,32,43,.28);
+  --font-display:"Saira",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
+  --maxw:1080px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f151c; --surface:#161e27; --surface-2:#1b242e; --surface-3:#212c37;
+    --ink:#e8eef4; --ink-soft:#a6b6c4; --ink-faint:#71818f;
+    --line:#273340; --line-strong:#33424f;
+    --accent:#f4763a; --accent-soft:#2a1c14; --on-accent:#160d07;
+    --steel:#7fadcd;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+    --shadow-lift:0 14px 34px -14px rgba(0,0,0,.65);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f151c; --surface:#161e27; --surface-2:#1b242e; --surface-3:#212c37;
+  --ink:#e8eef4; --ink-soft:#a6b6c4; --ink-faint:#71818f;
+  --line:#273340; --line-strong:#33424f;
+  --accent:#f4763a; --accent-soft:#2a1c14; --on-accent:#160d07;
+  --steel:#7fadcd;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+  --shadow-lift:0 14px 34px -14px rgba(0,0,0,.65);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block; max-width:100%}
+a{color:inherit}
+button{font:inherit; color:inherit; cursor:pointer}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-faint);
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  position:relative; overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 34px,
+    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/34px 100%,
+    var(--surface);
+}
+:root[data-theme="dark"] .masthead,
+:root:not([data-theme="light"]) .masthead{opacity:1}
+.masthead::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 80% at 82% -10%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 60%);
+  pointer-events:none;
+}
+.masthead .wrap{position:relative; padding-top:clamp(30px,5vw,52px); padding-bottom:clamp(28px,4vw,44px)}
+.tag-row{display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; margin-bottom:1.1rem}
+.tag-row .dot{width:7px; height:7px; border-radius:50%; background:var(--accent)}
+.name{
+  font-family:var(--font-display); font-weight:700; letter-spacing:-.01em;
+  font-size:clamp(2.3rem,6vw,3.6rem); line-height:1.02; margin:0;
+  text-wrap:balance;
+}
+.role{
+  font-family:var(--font-display); font-weight:600; color:var(--accent);
+  font-size:clamp(1.02rem,2.4vw,1.28rem); margin:.5rem 0 0; letter-spacing:.01em;
+}
+.lede{
+  margin:1.15rem 0 0; max-width:60ch; color:var(--ink-soft);
+  font-size:clamp(1rem,1.5vw,1.08rem);
+}
+.specs{
+  margin-top:clamp(1.6rem,3vw,2.1rem); padding-top:1.15rem;
+  border-top:1px solid var(--line);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem 1.6rem;
+}
+.spec dt{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint)}
+.spec dd{margin:.28rem 0 0; font-weight:500; font-size:.96rem}
+
+/* ---------- section ---------- */
+.section{padding:clamp(38px,6vw,64px) 0}
+.section-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1.6rem}
+.section-head h2{
+  font-family:var(--font-display); font-weight:600; font-size:clamp(1.35rem,3vw,1.8rem);
+  margin:0; letter-spacing:-.005em;
+}
+.section-head .count{font-family:var(--font-mono); font-size:.8rem; color:var(--ink-faint)}
+
+/* ---------- project cards ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:clamp(16px,2.4vw,26px)}
+.card{
+  position:relative; display:flex; flex-direction:column; text-align:left;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  overflow:hidden; box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover,.card:focus-visible{transform:translateY(-4px); box-shadow:var(--shadow-lift); border-color:var(--line-strong)}
+.card:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.card__media{position:relative; aspect-ratio:16/10; background:var(--surface-3); overflow:hidden}
+.card__media img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+.card:hover .card__media img{transform:scale(1.035)}
+.card__index{
+  position:absolute; top:10px; left:10px; z-index:2;
+  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.1em;
+  background:color-mix(in srgb,var(--surface) 82%,transparent); backdrop-filter:blur(4px);
+  color:var(--ink-soft); border:1px solid var(--line); border-radius:5px; padding:.16rem .45rem;
+}
+.card__body{padding:1.05rem 1.15rem 1.25rem; display:flex; flex-direction:column; gap:.55rem; flex:1}
+.card__kind{font-family:var(--font-mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+.card__title{font-family:var(--font-display); font-weight:600; font-size:1.24rem; line-height:1.15; margin:0}
+.card__desc{color:var(--ink-soft); font-size:.92rem; margin:0}
+.chips{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:auto; padding-top:.35rem}
+.chip{
+  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.02em;
+  color:var(--ink-soft); background:var(--surface-2); border:1px solid var(--line);
+  padding:.16rem .5rem; border-radius:20px;
+}
+.card__cta{
+  display:inline-flex; align-items:center; gap:.4rem; margin-top:.55rem;
+  font-family:var(--font-mono); font-size:.76rem; color:var(--accent); letter-spacing:.02em;
+}
+.card__cta svg{transition:transform .18s ease}
+.card:hover .card__cta svg{transform:translateX(3px)}
+
+/* ---------- dialog ---------- */
+.overlay{
+  position:fixed; inset:0; z-index:50; display:none;
+  padding:clamp(12px,3vw,40px);
+  background:color-mix(in srgb,#0a0f14 62%,transparent);
+  backdrop-filter:blur(3px);
+  overflow-y:auto;
+}
+.overlay.open{display:grid; place-items:start center}
+.panel{
+  position:relative; width:min(920px,100%); margin:auto;
+  background:var(--surface); border:1px solid var(--line-strong); border-radius:14px;
+  box-shadow:var(--shadow-lift); overflow:hidden;
+}
+.panel__close{
+  position:absolute; top:12px; right:12px; z-index:5;
+  width:38px; height:38px; display:grid; place-items:center;
+  background:color-mix(in srgb,var(--surface) 78%,transparent); backdrop-filter:blur(6px);
+  border:1px solid var(--line); border-radius:9px; color:var(--ink);
+}
+.panel__close:hover{border-color:var(--accent); color:var(--accent)}
+.detail{display:none}
+.detail.active{display:block}
+
+.detail__head{padding:clamp(20px,3vw,30px) clamp(20px,3.5vw,34px) 0}
+.detail__kind{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.detail__title{font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,3.6vw,2.15rem); line-height:1.06; margin:.5rem 0 0; text-wrap:balance}
+.detail__meta{
+  margin:1rem 0 0; padding:.9rem 0 0; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.8rem 1.2rem;
+}
+.detail__meta dt{font-family:var(--font-mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint)}
+.detail__meta dd{margin:.25rem 0 0; font-size:.88rem; font-weight:500}
+
+/* media stage */
+.stage-wrap{padding:clamp(18px,3vw,26px) clamp(20px,3.5vw,34px) 0}
+.stage{
+  position:relative; aspect-ratio:16/9; background:var(--surface-3);
+  border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  display:grid; place-items:center;
+}
+.stage img{width:100%; height:100%; object-fit:contain}
+.stage video{width:100%; height:100%; object-fit:contain; background:#05080b}
+.stage__cap{
+  position:absolute; left:0; right:0; bottom:0;
+  font-family:var(--font-mono); font-size:.72rem; color:#eef1f4;
+  background:linear-gradient(transparent,rgba(5,8,11,.82)); padding:1.4rem .8rem .55rem;
+  pointer-events:none;
+}
+.thumbs{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.7rem}
+.thumb{
+  position:relative; width:74px; height:52px; border-radius:6px; overflow:hidden;
+  border:1px solid var(--line); background:var(--surface-3); padding:0;
+}
+.thumb img{width:100%; height:100%; object-fit:cover}
+.thumb.sel{border-color:var(--accent); outline:1px solid var(--accent)}
+.thumb .play{
+  position:absolute; inset:0; display:grid; place-items:center;
+  background:rgba(5,8,11,.34); color:#fff;
+}
+.thumb .play svg{width:18px; height:18px}
+
+/* tabs */
+.tabs{margin-top:clamp(18px,3vw,26px); border-bottom:1px solid var(--line); padding:0 clamp(20px,3.5vw,34px); display:flex; gap:.2rem; flex-wrap:wrap}
+.tab{
+  font-family:var(--font-mono); font-size:.76rem; letter-spacing:.04em;
+  background:none; border:0; padding:.7rem .85rem; color:var(--ink-faint);
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+.tab[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--accent)}
+.tab:hover{color:var(--ink)}
+.tabpanels{padding:clamp(18px,3vw,26px) clamp(20px,3.5vw,34px) clamp(24px,4vw,34px)}
+.tabpanel{display:none; animation:fade .25s ease}
+.tabpanel.active{display:block}
+@keyframes fade{from{opacity:0; transform:translateY(4px)}to{opacity:1; transform:none}}
+
+.prose p{margin:0 0 .85rem; max-width:66ch; color:var(--ink-soft)}
+.prose p strong{color:var(--ink); font-weight:600}
+.prose a{color:var(--accent); text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent); text-underline-offset:3px}
+
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.8rem; margin:.2rem 0 1.3rem}
+.metric{background:var(--surface-2); border:1px solid var(--line); border-radius:9px; padding:.8rem .9rem}
+.metric .val{font-family:var(--font-display); font-weight:700; font-size:1.5rem; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums}
+.metric .val .u{font-size:.8rem; font-weight:500; color:var(--ink-soft); margin-left:.15rem}
+.metric .lab{display:block; margin-top:.4rem; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.04em; color:var(--ink-faint); line-height:1.3}
+
+.list{list-style:none; margin:0; padding:0; display:grid; gap:.6rem}
+.list li{position:relative; padding-left:1.35rem; color:var(--ink-soft); max-width:64ch}
+.list li::before{content:""; position:absolute; left:.15rem; top:.62em; width:7px; height:7px; background:var(--accent); border-radius:1px; transform:rotate(45deg)}
+.list li strong{color:var(--ink); font-weight:600}
+.subhead{font-family:var(--font-mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:1.4rem 0 .7rem}
+.subhead:first-child{margin-top:0}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line); background:var(--surface)}
+.foot .wrap{padding:clamp(28px,4vw,40px) clamp(18px,4vw,40px); display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:baseline; justify-content:space-between}
+.foot .name-sm{font-family:var(--font-display); font-weight:600; font-size:1.05rem}
+.foot .muted{color:var(--ink-faint); font-family:var(--font-mono); font-size:.74rem; letter-spacing:.04em}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="tag-row">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="eyebrow">Engineering portfolio &mdash; 2025 / 2026</span>
+    </div>
+    <h1 class="name">Nick Gholami</h1>
+    <p class="role">Mechanical engineering, working at the mechatronics edge</p>
+    <p class="lede">
+      &#128075; Welcome &mdash; I'm Nick, a mechanical engineering student at DTU with a
+      soft spot for machines that have to work in the real world, not just on paper. I feel
+      most at home where mechanics, electronics and software meet: the point where a design
+      finally has to be built, wired up and made to move.
+    </p>
+    <p class="lede">
+      What I enjoy most is taking something the whole way &mdash; from a first sketch and a
+      CAD model, through 3D-printed parts, sensors and motors, to the control and vision code
+      that ties it all together. I like the moment a pile of components becomes one system that
+      does what you asked it to. And, honestly, I've learned just as much from the moments when
+      it stubbornly refused to.
+    </p>
+    <p class="lede">
+      The three projects below are where that curiosity has taken me so far: a self-balancing
+      robot, an AI-driven sorting arm, and an automated disassembly machine. Have a look
+      around &mdash; each one opens up with photos, results, and a note on what it taught me.
+    </p>
+    <dl class="specs">
+      <div class="spec"><dt>Degree</dt><dd>MSc Mechanical Engineering</dd></div>
+      <div class="spec"><dt>University</dt><dd>DTU &middot; Technical University of Denmark</dd></div>
+      <div class="spec"><dt>Focus</dt><dd>Mechatronics &middot; Robotics &middot; Controls</dd></div>
+      <div class="spec"><dt>Toolset</dt><dd>SolidWorks &middot; 3D printing &middot; Python &middot; MATLAB</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="wrap section">
+  <div class="section-head">
+    <h2>Selected projects</h2>
+    <span class="count">03 &mdash; click any card to open</span>
+  </div>
+
+  <div class="cards" id="cards">
+    <button class="card" data-target="gantry" aria-haspopup="dialog">
+      <span class="card__media">
+        <span class="card__index">01</span>
+        <img src="assets/gantry/toolhead.jpg" alt="Gantry machine tool head over the work bed with 3D-printed test objects" loading="lazy" />
+      </span>
+      <span class="card__body">
+        <span class="card__kind">Bachelor thesis &middot; Mechatronics</span>
+        <span class="card__title">Automated Gantry Disassembly System</span>
+        <span class="card__desc">A gantry machine that unscrews and presses apart end-of-life products, guided by camera and force sensing.</span>
+        <span class="chips">
+          <span class="chip">Computer vision</span><span class="chip">Sensor fusion</span><span class="chip">CNC / gantry</span>
+        </span>
+        <span class="card__cta">Open project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </button>
+
+    <button class="card" data-target="regbot" aria-haspopup="dialog">
+      <span class="card__media">
+        <span class="card__index">02</span>
+        <img src="assets/regbot/hero.jpg" alt="Two-wheeled self-balancing REGBOT robot driving upright along a corridor" loading="lazy" />
+      </span>
+      <span class="card__body">
+        <span class="card__kind">Control design &middot; Robotics</span>
+        <span class="card__title">REGBOT Self-Balancing Robot</span>
+        <span class="card__desc">Four nested control loops that keep a two-wheeled robot upright while it drives and reaches target positions.</span>
+        <span class="chips">
+          <span class="chip">Control systems</span><span class="chip">MATLAB / Simulink</span><span class="chip">Embedded</span>
+        </span>
+        <span class="card__cta">Open project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </button>
+
+    <button class="card" data-target="arm" aria-haspopup="dialog">
+      <span class="card__media">
+        <span class="card__index">03</span>
+        <img src="assets/arm/hero.jpg" alt="5-DOF 3D-printed robotic arm with servo motors and a Raspberry Pi camera" loading="lazy" />
+      </span>
+      <span class="card__body">
+        <span class="card__kind">Project work &middot; AI robotics</span>
+        <span class="card__title">AI Robotic Arm for Waste Sorting</span>
+        <span class="card__desc">A 3D-printed 5-axis arm that sees a piece of waste, classifies it with AI, and sorts it using inverse kinematics.</span>
+        <span class="chips">
+          <span class="chip">Inverse kinematics</span><span class="chip">AI vision</span><span class="chip">CAD / 3D print</span>
+        </span>
+        <span class="card__cta">Open project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </button>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="name-sm">Nick Gholami</span>
+    <span class="muted">MSc Mechanical Engineering &middot; DTU &middot; Copenhagen</span>
+  </div>
+</footer>
+
+<!-- ============ DIALOG ============ -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="dlg-title">
+  <div class="panel">
+    <button class="panel__close" id="close" aria-label="Close project">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <!-- ===== GANTRY ===== -->
+    <article class="detail" id="detail-gantry">
+      <div class="detail__head">
+        <div class="detail__kind">Bachelor thesis &middot; DTU REMANUFACTORY</div>
+        <h3 class="detail__title" id="dlg-title-gantry">Automated Gantry-Based Disassembly System</h3>
+        <dl class="detail__meta">
+          <div><dt>Context</dt><dd>Bachelor thesis, 2026</dd></div>
+          <div><dt>Team</dt><dd>2 engineers</dd></div>
+          <div><dt>Supervisor</dt><dd>Tobias Eifler</dd></div>
+          <div><dt>My focus</dt><dd>Mechanics, sensing & control</dd></div>
+        </dl>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage" data-stage></div>
+        <div class="thumbs" data-thumbs>
+          <button class="thumb" data-type="img" data-src="assets/gantry/hero.jpg" data-cap="The repurposed 3-axis gantry with the unified tool head" aria-label="Full machine"><img src="assets/gantry/hero.jpg" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/gantry/toolhead.jpg" data-cap="Unified tool head: one driven shaft for both unscrewing and pressing" aria-label="Tool head"><img src="assets/gantry/toolhead.jpg" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/gantry/vision.jpg" data-cap="Camera locates and sizes every screw (M4 / M5) and press site in mm" aria-label="Vision detection"><img src="assets/gantry/vision.jpg" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/gantry/unscrew.png" data-cap="Laser-tracked unscrew cycle: contact &rarr; engage &rarr; active &rarr; exit" aria-label="Unscrew data"><img src="assets/gantry/unscrew.png" alt=""></button>
+          <button class="thumb" data-type="video" data-src="assets/gantry/demo.mp4" data-poster="assets/gantry/demo_poster.jpg" data-cap="Full disassembly prototype running" aria-label="Play demo video"><img src="assets/gantry/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Gantry project sections">
+        <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
+        <button class="tab" role="tab" data-tab="re" aria-selected="false">Highlights &amp; results</button>
+        <button class="tab" role="tab" data-tab="ga" aria-selected="false">What I gained</button>
+      </div>
+      <div class="tabpanels">
+        <div class="tabpanel active" data-panel="ov">
+          <div class="prose">
+            <p>Remanufacturing recovers value from worn-out products by taking them apart so their components can be reused &mdash; but that disassembly is still done almost entirely by hand, because every incoming product is a little different. My bachelor thesis, carried out with DTU's national <strong>REMANUFACTORY</strong> research centre, asked whether a single machine could automate the repetitive part of that work while still handing the tricky cases back to a person.</p>
+            <p>The answer was a <strong>unified tool head</strong>: one 3D-printed module, driven through a single shaft, that both <strong>unscrews fasteners and presses parts out</strong> without ever swapping tools. That is harder than it sounds, because the same assembly has to transmit rotational torque for screwing and axial force for pressing at the same time. We solved it with an internal spring that lets the head pass <em>passively</em> from screw mode into press mode as it pushes down &mdash; no motor, no reconfiguration &mdash; and even changes its own screwdriver bits at a small parking station using only the machine's existing axes.</p>
+            <p>Making it reliable was really a <strong>sensing and software</strong> problem. A camera finds every screw, corrects for lens distortion and viewing angle with a homography calibration, and reports each screw's position in millimetres and its size (M4 vs M5). A laser distance sensor watches the head descend and can tell ordinary surface contact apart from the tiny extra travel that means the bit has actually seated in the screw. A load cell monitors the press force and stops immediately at a set limit. All of it is coordinated by a <strong>state machine</strong> that, at every step, checks the sensors and either continues, retries, or flags the part for a human &mdash; the machine never pushes blindly.</p>
+            <p>We deliberately built the prototype in 3D-printed PLA so a failed part could be redesigned and reprinted the same day, but dimensioned every component so the exact same geometry can be re-cut in 10&nbsp;mm metal plate for a stronger production version, without moving a single sensor. <a href="https://github.com/Aleksandar-Drejer-Petersen/automated-disassembly-machine" target="_blank" rel="noopener">Code base on GitHub &rarr;</a></p>
+          </div>
+        </div>
+        <div class="tabpanel" data-panel="re">
+          <div class="metrics">
+            <div class="metric"><div class="val">0.09<span class="u">mm</span></div><span class="lab">Gantry repeatability, all 3 axes</span></div>
+            <div class="metric"><div class="val">0.247<span class="u">mm</span></div><span class="lab">Vision positioning error (RMS)</span></div>
+            <div class="metric"><div class="val">100<span class="u">%</span></div><span class="lab">Automated screw removal, 20 trials</span></div>
+            <div class="metric"><div class="val">0.71<span class="u">%</span></div><span class="lab">Failure rate over 160 operations</span></div>
+          </div>
+          <ul class="list">
+            <li><strong>Camera screw localisation &amp; sizing.</strong> Homography-calibrated vision reports machine coordinates for every screw and classifies M4 vs M5 from a single image.</li>
+            <li><strong>Passive automatic bit changing.</strong> The head swaps screwdriver bits using only the existing axes &mdash; reached 100% reliability with the final station design.</li>
+            <li><strong>Sensor-driven safety.</strong> Force and laser feedback let the machine detect stalls and missed engagements and stop, rather than continuing blindly.</li>
+            <li><strong>Honest scope.</strong> Validated on purpose-built test objects; the report is clear about what still needs a metal redesign before industrial use.</li>
+          </ul>
+        </div>
+        <div class="tabpanel" data-panel="ga">
+          <div class="subhead">Technical skills</div>
+          <ul class="list">
+            <li><strong>Full-system mechatronics</strong> &mdash; carrying one machine from functional decomposition through mechanics, electronics and software to verified deliverables.</li>
+            <li><strong>Sensor selection &amp; calibration</strong> &mdash; load cell, laser distance sensor, and camera intrinsics plus pixel-to-mm homography.</li>
+            <li><strong>Control logic</strong> &mdash; a state machine that coordinates vision, motion and force feedback into a reliable cycle.</li>
+            <li><strong>Design for manufacturing</strong> &mdash; building a 3D-printed prototype whose geometry transfers directly to machined metal.</li>
+          </ul>
+          <div class="subhead">Ways of working</div>
+          <ul class="list">
+            <li>Making disciplined engineering trade-offs and stating limitations honestly instead of overselling results.</li>
+            <li>Iterating fast: designing so a failed part could be reprinted and retested the same day.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== REGBOT ===== -->
+    <article class="detail" id="detail-regbot">
+      <div class="detail__head">
+        <div class="detail__kind">Course 34721 &middot; Linear Control Design</div>
+        <h3 class="detail__title">REGBOT Self-Balancing Robot</h3>
+        <dl class="detail__meta">
+          <div><dt>Context</dt><dd>Course project, 2026</dd></div>
+          <div><dt>Team</dt><dd>4 engineers</dd></div>
+          <div><dt>Domain</dt><dd>Classical control</dd></div>
+          <div><dt>Tools</dt><dd>MATLAB &middot; Simulink</dd></div>
+        </dl>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage" data-stage></div>
+        <div class="thumbs" data-thumbs>
+          <button class="thumb" data-type="img" data-src="assets/regbot/hero.jpg" data-cap="The REGBOT balancing on two wheels while driving" aria-label="Robot balancing"><img src="assets/regbot/hero.jpg" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/regbot/step_response.png" data-cap="Velocity step response: simulation vs. the real robot" aria-label="Step response plot"><img src="assets/regbot/step_response.png" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/regbot/trajectory.png" data-cap="Measured path during the square-driving mission" aria-label="Trajectory plot"><img src="assets/regbot/trajectory.png" alt=""></button>
+          <button class="thumb" data-type="video" data-src="assets/regbot/demo.mp4" data-poster="assets/regbot/demo_poster.jpg" data-cap="REGBOT running its missions" aria-label="Play demo video"><img src="assets/regbot/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="REGBOT project sections">
+        <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
+        <button class="tab" role="tab" data-tab="re" aria-selected="false">Highlights &amp; results</button>
+        <button class="tab" role="tab" data-tab="ga" aria-selected="false">What I gained</button>
+      </div>
+      <div class="tabpanels">
+        <div class="tabpanel active" data-panel="ov">
+          <div class="prose">
+            <p>A REGBOT is a two-wheeled robot that has to actively balance to stay upright &mdash; like a Segway the size of a lunchbox. Left alone it simply falls over; the only thing keeping it up is a controller adjusting the wheels hundreds of times a second. For this control-design course we designed and tuned <strong>the complete control system</strong> that keeps it balanced while it drives and moves to target positions.</p>
+            <p>The system is built as <strong>four nested control loops</strong>, each wrapped around the one inside it: a fast inner loop regulating wheel speed, a balance loop that holds the tilt angle, then a velocity loop, and finally a position loop on the outside. We designed each one in the <strong>frequency domain</strong> &mdash; choosing a target phase margin, reading the response straight off Bode plots, and sizing the controller from there &mdash; then modelled and linearised the whole robot in MATLAB and Simulink to check the design before it ever touched hardware.</p>
+            <p>Balancing is fundamentally unstable, so the tilt dynamics needed a <strong>post-integrator</strong> just to become controllable, and a PI-Lead controller on top to hold the angle without overshooting. The robot also has a quirk called non-minimum-phase behaviour &mdash; to drive forward it first tips <em>backward</em> a little &mdash; which we tamed with a pre-filter that eases each command in gently.</p>
+            <p>The most instructive part was the gap between theory and reality. The clean simulated design misbehaved on the real robot, so we hand-tuned every loop on the hardware and learned exactly which effects &mdash; friction, time delays, sensor noise &mdash; the tidy linear model had quietly left out. The finished robot balanced through a full closed square-path mission. <a href="https://youtu.be/MEZGe73m3MY" target="_blank" rel="noopener">Watch the full mission run &rarr;</a></p>
+          </div>
+        </div>
+        <div class="tabpanel" data-panel="re">
+          <ul class="list">
+            <li><strong>Cascaded controller stack.</strong> PI wheel-speed loop, a post-integrator to stabilise the inherently unstable tilt, a PI-Lead balance controller, and P position control.</li>
+            <li><strong>Undershoot handling.</strong> Added a first-order pre-filter to tame the robot's non-minimum-phase response so the balance loop had time to react.</li>
+            <li><strong>Simulation vs. hardware.</strong> Directly compared modelled and measured step responses, then reconciled them through tuning.</li>
+            <li><strong>Full mission.</strong> The finished robot balanced while completing a closed square-path driving mission.</li>
+          </ul>
+        </div>
+        <div class="tabpanel" data-panel="ga">
+          <div class="subhead">Technical skills</div>
+          <ul class="list">
+            <li><strong>Classical control design</strong> &mdash; frequency-response methods, phase margin, lead/lag compensation and cascaded loop architecture.</li>
+            <li><strong>Modelling &amp; simulation</strong> &mdash; MATLAB/Simulink linearisation of an unstable plant.</li>
+            <li><strong>Theory-to-hardware transfer</strong> &mdash; diagnosing why a robot behaves differently than its model and closing the gap methodically.</li>
+          </ul>
+          <div class="subhead">Ways of working</div>
+          <ul class="list">
+            <li>Systematic, patient tuning &mdash; changing one parameter at a time and reading the response.</li>
+            <li>Splitting a four-person control problem into loops the team could design in parallel.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== ARM ===== -->
+    <article class="detail" id="detail-arm">
+      <div class="detail__head">
+        <div class="detail__kind">Course 41801 &middot; Project work</div>
+        <h3 class="detail__title">AI Robotic Arm for Waste Sorting</h3>
+        <dl class="detail__meta">
+          <div><dt>Context</dt><dd>Project work, 2025</dd></div>
+          <div><dt>Team</dt><dd>5 engineers</dd></div>
+          <div><dt>Supervisor</dt><dd>Konstantinos Poulios</dd></div>
+          <div><dt>Tools</dt><dd>SolidWorks &middot; IKPy &middot; OpenAI</dd></div>
+        </dl>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage" data-stage></div>
+        <div class="thumbs" data-thumbs>
+          <button class="thumb" data-type="img" data-src="assets/arm/hero.jpg" data-cap="The 5-DOF 3D-printed servo arm" aria-label="Robotic arm"><img src="assets/arm/hero.jpg" alt=""></button>
+          <button class="thumb" data-type="img" data-src="assets/arm/camera.jpg" data-cap="Top-down camera locates the object in real-world coordinates and picks a bin" aria-label="Camera detection"><img src="assets/arm/camera.jpg" alt=""></button>
+          <button class="thumb" data-type="video" data-src="assets/arm/demo.mp4" data-poster="assets/arm/demo_poster.jpg" data-cap="The arm identifying and sorting an object" aria-label="Play demo video"><img src="assets/arm/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Robotic arm project sections">
+        <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
+        <button class="tab" role="tab" data-tab="re" aria-selected="false">Highlights &amp; results</button>
+        <button class="tab" role="tab" data-tab="ga" aria-selected="false">What I gained</button>
+      </div>
+      <div class="tabpanels">
+        <div class="tabpanel active" data-panel="ov">
+          <div class="prose">
+            <p>This is a <strong>5-axis robotic arm that sorts waste on its own</strong>, aimed at the kind of manual, and often unsafe, sorting done in low-resource areas. A camera looks down at the work area, an AI model identifies what each object is, and the arm picks it up and drops it in the right bin &mdash; for example separating electronic waste from everything else.</p>
+            <p>Before any building, we chose the concept properly. A morphological analysis compared grippers and drive options, and a torque calculation (a peak of roughly <strong>6.7&nbsp;N&middot;m</strong> at the shoulder) showed that affordable stepper motors simply couldn't lift the target load &mdash; so the arm is <strong>servo-driven</strong>, with each joint's motor sized to what that joint actually has to hold. The whole structure is 3D-printed, designed with the tolerances the printer can really hold.</p>
+            <p>To make the tip reach a chosen point in space, we used <strong>inverse kinematics</strong> &mdash; the maths that works out every joint angle from a desired end position. We fed the IKPy library a URDF robot model exported from our SolidWorks CAD, while a Raspberry Pi camera (calibrated against ArUco markers) converts what it sees into real-world X-Y coordinates for the arm to aim at. An AI image-recognition model then labels the object so the arm knows which bin it belongs in.</p>
+            <p>Two problems taught us the most, and both lived on the messy boundary between the digital model and the physical robot. First, the servos didn't actually go where they were told &mdash; each had its own offset and scaling &mdash; which we fixed with a measured <strong>per-motor calibration function</strong> that translates the computed angle into the correct command. Second, the servos' 180&deg; limits kept trapping the solver in dead-ends, so we moved those limits out of the model and handled them in our own code by seeding the solver with sensible starting guesses.</p>
+          </div>
+        </div>
+        <div class="tabpanel" data-panel="re">
+          <div class="metrics">
+            <div class="metric"><div class="val">0.60<span class="u">mm</span></div><span class="lab">Repeatability (std. deviation)</span></div>
+            <div class="metric"><div class="val">437<span class="u">g</span></div><span class="lab">Maximum lifted payload</span></div>
+            <div class="metric"><div class="val">15</div><span class="lab">Objects in AI classification test</span></div>
+            <div class="metric"><div class="val">5</div><span class="lab">Degrees of freedom</span></div>
+          </div>
+          <ul class="list">
+            <li><strong>Concept selection by calculation.</strong> Torque analysis (~6.7&nbsp;N&middot;m peak) ruled out affordable steppers and pointed to servos &mdash; sized per joint.</li>
+            <li><strong>Inverse kinematics from CAD.</strong> Drove the end-effector to target coordinates using a URDF generated from the SolidWorks assembly.</li>
+            <li><strong>AI classification.</strong> Sent camera images to an image-recognition model to label objects as E-waste or not, with a flexible category set.</li>
+            <li><strong>Real-hardware calibration.</strong> Linear per-servo correction turned computed angles into accurate physical positions.</li>
+          </ul>
+        </div>
+        <div class="tabpanel" data-panel="ga">
+          <div class="subhead">Technical skills</div>
+          <ul class="list">
+            <li><strong>Mechatronic integration</strong> &mdash; combining mechanics, electronics and AI into one working system.</li>
+            <li><strong>Inverse kinematics &amp; URDF modelling</strong> &mdash; turning a CAD assembly into a robot the software can solve for.</li>
+            <li><strong>Working with imperfect hardware</strong> &mdash; measuring and calibrating the difference between nominal and real servo behaviour.</li>
+            <li><strong>CAD for 3D printing</strong> &mdash; designing parts with the tolerances the print process actually holds.</li>
+          </ul>
+          <div class="subhead">Ways of working</div>
+          <ul class="list">
+            <li>Debugging across the hardware/software boundary &mdash; where the biggest learning of the project lived.</li>
+            <li>Coordinating a five-person team through concept selection to a finished demonstrator.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('overlay');
+  var closeBtn = document.getElementById('close');
+  var details = Array.prototype.slice.call(document.querySelectorAll('.detail'));
+  var lastFocus = null;
+
+  function setStage(detail, thumb){
+    var stage = detail.querySelector('[data-stage]');
+    var type = thumb.getAttribute('data-type');
+    var src = thumb.getAttribute('data-src');
+    var cap = thumb.getAttribute('data-cap') || '';
+    var capHtml = cap ? '<div class="stage__cap">'+cap+'</div>' : '';
+    if(type === 'video'){
+      var poster = thumb.getAttribute('data-poster') || '';
+      stage.innerHTML = '<video controls preload="metadata" playsinline poster="'+poster+'"><source src="'+src+'" type="video/mp4"></video>' + capHtml;
+    } else {
+      stage.innerHTML = '<img src="'+src+'" alt="'+(thumb.getAttribute('aria-label')||'')+'">' + capHtml;
+    }
+    detail.querySelectorAll('[data-thumbs] .thumb').forEach(function(t){ t.classList.toggle('sel', t===thumb); });
+  }
+
+  function open(id){
+    var target = document.getElementById('detail-'+id);
+    if(!target) return;
+    lastFocus = document.activeElement;
+    details.forEach(function(d){ d.classList.toggle('active', d===target); });
+    // reset tabs to overview
+    target.querySelectorAll('.tab').forEach(function(t,i){ t.setAttribute('aria-selected', i===0?'true':'false'); });
+    target.querySelectorAll('.tabpanel').forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')==='ov'); });
+    // first thumb into stage
+    var firstThumb = target.querySelector('[data-thumbs] .thumb');
+    if(firstThumb) setStage(target, firstThumb);
+    overlay.setAttribute('aria-labelledby', target.querySelector('.detail__title').id || 'dlg-title');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close(){
+    // stop any playing video
+    var v = overlay.querySelector('video'); if(v){ try{ v.pause(); }catch(e){} }
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    details.forEach(function(d){ d.classList.remove('active'); });
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.getElementById('cards').addEventListener('click', function(e){
+    var card = e.target.closest('.card'); if(card) open(card.getAttribute('data-target'));
+  });
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+
+  // delegated: thumbnails + tabs
+  overlay.addEventListener('click', function(e){
+    var thumb = e.target.closest('.thumb');
+    if(thumb){ setStage(thumb.closest('.detail'), thumb); return; }
+    var tab = e.target.closest('.tab');
+    if(tab){
+      var detail = tab.closest('.detail');
+      var name = tab.getAttribute('data-tab');
+      detail.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-selected', String(t===tab)); });
+      detail.querySelectorAll('.tabpanel').forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')===name); });
+    }
+  });
+})();
+</script>
