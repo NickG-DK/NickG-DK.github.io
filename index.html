@@ -62,19 +62,23 @@ button{font:inherit; color:inherit; cursor:pointer}
 .masthead{
   position:relative; overflow:hidden;
   border-bottom:1px solid var(--line);
-  background:
-    linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 34px,
-    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/34px 100%,
-    var(--surface);
+  background:var(--surface);
 }
-:root[data-theme="dark"] .masthead,
-:root:not([data-theme="light"]) .masthead{opacity:1}
+/* faint blueprint grid, masked so it fades out entirely behind the text
+   and only whispers up in the top-right accent corner */
 .masthead::before{
-  content:""; position:absolute; inset:0;
-  background:radial-gradient(120% 80% at 82% -10%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 60%);
-  pointer-events:none;
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    linear-gradient(color-mix(in srgb,var(--line) 50%,transparent) 1px,transparent 1px) 0 0/100% 42px,
+    linear-gradient(90deg,color-mix(in srgb,var(--line) 50%,transparent) 1px,transparent 1px) 0 0/42px 100%;
+  -webkit-mask-image:radial-gradient(135% 130% at 90% -25%, #000 0%, transparent 60%);
+          mask-image:radial-gradient(135% 130% at 90% -25%, #000 0%, transparent 60%);
 }
-.masthead .wrap{position:relative; padding-top:clamp(30px,5vw,52px); padding-bottom:clamp(28px,4vw,44px)}
+.masthead::after{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(120% 80% at 84% -10%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 58%);
+}
+.masthead .wrap{position:relative; z-index:1; padding-top:clamp(30px,5vw,52px); padding-bottom:clamp(28px,4vw,44px)}
 .tag-row{display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; margin-bottom:1.1rem}
 .tag-row .dot{width:7px; height:7px; border-radius:50%; background:var(--accent)}
 .name{
