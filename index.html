@@ -205,6 +205,20 @@ button{font:inherit; color:inherit; cursor:pointer}
 }
 .thumb .play svg{width:18px; height:18px}
 
+/* report link */
+.doc-row{padding:clamp(14px,2vw,18px) clamp(20px,3.5vw,34px) 0}
+.doclink{
+  display:inline-flex; align-items:center; gap:.55rem; text-decoration:none;
+  font-family:var(--font-mono); font-size:.8rem; letter-spacing:.01em;
+  color:var(--ink); background:var(--surface-2);
+  border:1px solid var(--line); border-radius:9px; padding:.6rem .85rem;
+  transition:border-color .16s ease, color .16s ease;
+}
+.doclink:hover,.doclink:focus-visible{border-color:var(--accent); color:var(--accent)}
+.doclink svg{width:16px; height:16px; flex:none}
+.doclink .sz{color:var(--ink-faint)}
+.doclink:hover .sz{color:inherit}
+
 /* tabs */
 .tabs{margin-top:clamp(18px,3vw,26px); border-bottom:1px solid var(--line); padding:0 clamp(20px,3.5vw,34px); display:flex; gap:.2rem; flex-wrap:wrap}
 .tab{
@@ -381,6 +395,12 @@ button{font:inherit; color:inherit; cursor:pointer}
           <button class="thumb" data-type="video" data-src="assets/gantry/demo.mp4" data-poster="assets/gantry/demo_poster.jpg" data-cap="Full disassembly prototype running" aria-label="Play demo video"><img src="assets/gantry/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
         </div>
       </div>
+      <div class="doc-row">
+        <a class="doclink" href="assets/gantry/report.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+          Read the full thesis <span class="sz">&middot; PDF &middot; 100 pp</span>
+        </a>
+      </div>
       <div class="tabs" role="tablist" aria-label="Gantry project sections">
         <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
         <button class="tab" role="tab" data-tab="re" aria-selected="false">Highlights &amp; results</button>
@@ -447,6 +467,12 @@ button{font:inherit; color:inherit; cursor:pointer}
           <button class="thumb" data-type="video" data-src="assets/regbot/demo.mp4" data-poster="assets/regbot/demo_poster.jpg" data-cap="REGBOT running its missions" aria-label="Play demo video"><img src="assets/regbot/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
         </div>
       </div>
+      <div class="doc-row">
+        <a class="doclink" href="assets/regbot/report.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+          Read the full report <span class="sz">&middot; PDF</span>
+        </a>
+      </div>
       <div class="tabs" role="tablist" aria-label="REGBOT project sections">
         <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
         <button class="tab" role="tab" data-tab="re" aria-selected="false">Highlights &amp; results</button>
@@ -504,6 +530,12 @@ button{font:inherit; color:inherit; cursor:pointer}
           <button class="thumb" data-type="img" data-src="assets/arm/camera.jpg" data-cap="Top-down camera locates the object in real-world coordinates and picks a bin" aria-label="Camera detection"><img src="assets/arm/camera.jpg" alt=""></button>
           <button class="thumb" data-type="video" data-src="assets/arm/demo.mp4" data-poster="assets/arm/demo_poster.jpg" data-cap="The arm identifying and sorting an object" aria-label="Play demo video"><img src="assets/arm/demo_poster.jpg" alt=""><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
         </div>
+      </div>
+      <div class="doc-row">
+        <a class="doclink" href="assets/arm/report.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+          Read the full report <span class="sz">&middot; PDF &middot; in Danish</span>
+        </a>
       </div>
       <div class="tabs" role="tablist" aria-label="Robotic arm project sections">
         <button class="tab" role="tab" data-tab="ov" aria-selected="true">Overview</button>
