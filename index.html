@@ -1,5 +1,5 @@
 <title>Nick Gholami &middot; Mechatronics</title>
-<meta name="description" content="Engineering portfolio of Nick Gholami &mdash; hands-on mechatronics, robotics and control-systems projects." />
+<meta name="description" content="Engineering portfolio of Nick Gholami. Hands-on mechatronics, robotics and control-systems projects." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
@@ -92,7 +92,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 }
 .specs{
   margin-top:clamp(1.6rem,3vw,2.1rem); padding-top:1.15rem;
-  border-top:1px solid var(--line);
+  border-top:2px solid var(--line-strong);
   display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem 1.6rem;
 }
 .spec dt{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint)}
@@ -265,27 +265,27 @@ button{font:inherit; color:inherit; cursor:pointer}
   <div class="wrap">
     <div class="tag-row">
       <span class="dot" aria-hidden="true"></span>
-      <span class="eyebrow">Engineering portfolio &mdash; 2025 / 2026</span>
+      <span class="eyebrow">Engineering portfolio &middot; 2025 / 2026</span>
     </div>
     <h1 class="name">Nick Gholami</h1>
     <p class="role">Mechanical engineering, working at the mechatronics edge</p>
     <p class="lede">
-      &#128075; Welcome &mdash; I'm Nick, a mechanical engineering student at DTU with a
-      soft spot for machines that have to work in the real world, not just on paper. I feel
-      most at home where mechanics, electronics and software meet: the point where a design
-      finally has to be built, wired up and made to move.
+      &#128075; Hi, I'm Nick. I study mechanical engineering at DTU, and what I like most are
+      machines that have to hold up in the real world, not just on paper. My favourite part is
+      where mechanics, electronics and software all meet, and a design finally has to be built,
+      wired up and actually made to move.
     </p>
     <p class="lede">
-      What I enjoy most is taking something the whole way &mdash; from a first sketch and a
-      CAD model, through 3D-printed parts, sensors and motors, to the control and vision code
-      that ties it all together. I like the moment a pile of components becomes one system that
-      does what you asked it to. And, honestly, I've learned just as much from the moments when
-      it stubbornly refused to.
+      I like taking a project the whole way. It usually starts as a rough sketch and a CAD
+      model, turns into 3D-printed parts, sensors and motors, and ends as the code that ties
+      everything together. There's a moment where a pile of loose parts suddenly behaves like
+      one machine, and that's really what I'm in it for. To be honest, I've learned just as
+      much from the times it didn't.
     </p>
     <p class="lede">
-      The three projects below are where that curiosity has taken me so far: a self-balancing
-      robot, an AI-driven sorting arm, and an automated disassembly machine. Have a look
-      around &mdash; each one opens up with photos, results, and a note on what it taught me.
+      The three projects below are where that has taken me so far: a self-balancing robot, an
+      AI sorting arm, and an automated disassembly machine. Have a look around. Each one opens
+      up with photos, results, and a bit about what it taught me.
     </p>
     <dl class="specs">
       <div class="spec"><dt>Degree</dt><dd>MSc Mechanical Engineering</dd></div>
@@ -299,7 +299,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 <main class="wrap section">
   <div class="section-head">
     <h2>Selected projects</h2>
-    <span class="count">03 &mdash; click any card to open</span>
+    <span class="count">03 &middot; click any card to open</span>
   </div>
 
   <div class="cards" id="cards">
@@ -409,9 +409,9 @@ button{font:inherit; color:inherit; cursor:pointer}
       <div class="tabpanels">
         <div class="tabpanel active" data-panel="ov">
           <div class="prose">
-            <p>Remanufacturing recovers value from worn-out products by taking them apart so their components can be reused &mdash; but that disassembly is still done almost entirely by hand, because every incoming product is a little different. My bachelor thesis, carried out with DTU's national <strong>REMANUFACTORY</strong> research centre, asked whether a single machine could automate the repetitive part of that work while still handing the tricky cases back to a person.</p>
-            <p>The answer was a <strong>unified tool head</strong>: one 3D-printed module, driven through a single shaft, that both <strong>unscrews fasteners and presses parts out</strong> without ever swapping tools. That is harder than it sounds, because the same assembly has to transmit rotational torque for screwing and axial force for pressing at the same time. We solved it with an internal spring that lets the head pass <em>passively</em> from screw mode into press mode as it pushes down &mdash; no motor, no reconfiguration &mdash; and even changes its own screwdriver bits at a small parking station using only the machine's existing axes.</p>
-            <p>Making it reliable was really a <strong>sensing and software</strong> problem. A camera finds every screw, corrects for lens distortion and viewing angle with a homography calibration, and reports each screw's position in millimetres and its size (M4 vs M5). A laser distance sensor watches the head descend and can tell ordinary surface contact apart from the tiny extra travel that means the bit has actually seated in the screw. A load cell monitors the press force and stops immediately at a set limit. All of it is coordinated by a <strong>state machine</strong> that, at every step, checks the sensors and either continues, retries, or flags the part for a human &mdash; the machine never pushes blindly.</p>
+            <p>Remanufacturing recovers value from worn-out products by taking them apart so their parts can be reused, but that disassembly is still done almost entirely by hand, because every product that comes in is a little different. My bachelor thesis, done together with DTU's national <strong>REMANUFACTORY</strong> research centre, asked a simple question: could one machine handle the repetitive part of that job and still hand the awkward cases back to a person?</p>
+            <p>Our answer was a <strong>unified tool head</strong>. It's a single 3D-printed module, driven by one shaft, that both <strong>unscrews fasteners and presses parts out</strong> without ever swapping tools. That's trickier than it sounds, since the same assembly has to deliver twisting force for the screws and pushing force for the press at the same time. We managed it with an internal spring that lets the head slide <em>passively</em> from screw mode into press mode as it presses down, with no motor and no reconfiguration. It even swaps its own screwdriver bits at a little parking station, using nothing but the axes the machine already has.</p>
+            <p>Getting it to work reliably turned out to be mostly a <strong>sensing and software</strong> problem. A camera finds every screw, corrects for lens distortion and viewing angle with a homography calibration, and reports each screw's position in millimetres along with its size (M4 vs M5). A laser distance sensor watches the head come down and can tell normal surface contact apart from the tiny extra bit of travel that means the bit has actually seated in the screw. A load cell keeps an eye on the press force and stops the instant it hits a set limit. Tying it all together is a <strong>state machine</strong> that checks the sensors at every step and either carries on, tries again, or flags the part for a human. The machine never just pushes blindly.</p>
             <p>We deliberately built the prototype in 3D-printed PLA so a failed part could be redesigned and reprinted the same day, but dimensioned every component so the exact same geometry can be re-cut in 10&nbsp;mm metal plate for a stronger production version, without moving a single sensor. <a href="https://github.com/Aleksandar-Drejer-Petersen/automated-disassembly-machine" target="_blank" rel="noopener">Code base on GitHub &rarr;</a></p>
           </div>
         </div>
@@ -424,7 +424,7 @@ button{font:inherit; color:inherit; cursor:pointer}
           </div>
           <ul class="list">
             <li><strong>Camera screw localisation &amp; sizing.</strong> Homography-calibrated vision reports machine coordinates for every screw and classifies M4 vs M5 from a single image.</li>
-            <li><strong>Passive automatic bit changing.</strong> The head swaps screwdriver bits using only the existing axes &mdash; reached 100% reliability with the final station design.</li>
+            <li><strong>Passive automatic bit changing.</strong> The head swaps screwdriver bits using only the existing axes, and reached 100% reliability with the final station design.</li>
             <li><strong>Sensor-driven safety.</strong> Force and laser feedback let the machine detect stalls and missed engagements and stop, rather than continuing blindly.</li>
             <li><strong>Honest scope.</strong> Validated on purpose-built test objects; the report is clear about what still needs a metal redesign before industrial use.</li>
           </ul>
@@ -432,10 +432,10 @@ button{font:inherit; color:inherit; cursor:pointer}
         <div class="tabpanel" data-panel="ga">
           <div class="subhead">Technical skills</div>
           <ul class="list">
-            <li><strong>Full-system mechatronics</strong> &mdash; carrying one machine from functional decomposition through mechanics, electronics and software to verified deliverables.</li>
-            <li><strong>Sensor selection &amp; calibration</strong> &mdash; load cell, laser distance sensor, and camera intrinsics plus pixel-to-mm homography.</li>
-            <li><strong>Control logic</strong> &mdash; a state machine that coordinates vision, motion and force feedback into a reliable cycle.</li>
-            <li><strong>Design for manufacturing</strong> &mdash; building a 3D-printed prototype whose geometry transfers directly to machined metal.</li>
+            <li><strong>Full-system mechatronics.</strong> Taking one machine all the way from breaking the problem into functions, through mechanics, electronics and software, to results I could actually verify.</li>
+            <li><strong>Sensor selection and calibration.</strong> Load cell, laser distance sensor, and camera intrinsics plus pixel-to-mm homography.</li>
+            <li><strong>Control logic.</strong> Writing a state machine that keeps vision, motion and force feedback working together as one reliable cycle.</li>
+            <li><strong>Design for manufacturing.</strong> Building a 3D-printed prototype whose geometry carries straight over to machined metal.</li>
           </ul>
           <div class="subhead">Ways of working</div>
           <ul class="list">
@@ -481,10 +481,10 @@ button{font:inherit; color:inherit; cursor:pointer}
       <div class="tabpanels">
         <div class="tabpanel active" data-panel="ov">
           <div class="prose">
-            <p>A REGBOT is a two-wheeled robot that has to actively balance to stay upright &mdash; like a Segway the size of a lunchbox. Left alone it simply falls over; the only thing keeping it up is a controller adjusting the wheels hundreds of times a second. For this control-design course we designed and tuned <strong>the complete control system</strong> that keeps it balanced while it drives and moves to target positions.</p>
-            <p>The system is built as <strong>four nested control loops</strong>, each wrapped around the one inside it: a fast inner loop regulating wheel speed, a balance loop that holds the tilt angle, then a velocity loop, and finally a position loop on the outside. We designed each one in the <strong>frequency domain</strong> &mdash; choosing a target phase margin, reading the response straight off Bode plots, and sizing the controller from there &mdash; then modelled and linearised the whole robot in MATLAB and Simulink to check the design before it ever touched hardware.</p>
-            <p>Balancing is fundamentally unstable, so the tilt dynamics needed a <strong>post-integrator</strong> just to become controllable, and a PI-Lead controller on top to hold the angle without overshooting. The robot also has a quirk called non-minimum-phase behaviour &mdash; to drive forward it first tips <em>backward</em> a little &mdash; which we tamed with a pre-filter that eases each command in gently.</p>
-            <p>The most instructive part was the gap between theory and reality. The clean simulated design misbehaved on the real robot, so we hand-tuned every loop on the hardware and learned exactly which effects &mdash; friction, time delays, sensor noise &mdash; the tidy linear model had quietly left out. The finished robot balanced through a full closed square-path mission. <a href="https://youtu.be/MEZGe73m3MY" target="_blank" rel="noopener">Watch the full mission run &rarr;</a></p>
+            <p>A REGBOT is a two-wheeled robot that has to actively balance to stay upright, a bit like a Segway the size of a lunchbox. Left on its own it just falls over; the only thing holding it up is a controller nudging the wheels hundreds of times a second. For this control-design course we designed and tuned <strong>the whole control system</strong> that keeps it balanced while it drives and moves to target positions.</p>
+            <p>The system is built as <strong>four nested control loops</strong>, each one wrapped around the one inside it: a fast inner loop for wheel speed, a balance loop that holds the tilt angle, then a velocity loop, and finally a position loop on the outside. We designed each loop in the <strong>frequency domain</strong>, picking a target phase margin, reading the response straight off the Bode plots and sizing the controller from there. Then we modelled and linearised the whole robot in MATLAB and Simulink so we could check the design before it ever touched hardware.</p>
+            <p>Balancing is unstable by nature, so the tilt dynamics needed a <strong>post-integrator</strong> just to become controllable, with a PI-Lead controller on top to hold the angle without overshooting. The robot also has an odd habit called non-minimum-phase behaviour, where to drive forward it first has to tip <em>backward</em> a little. We handled that with a pre-filter that eases each command in gently.</p>
+            <p>The part I learned the most from was the gap between theory and reality. The clean simulated design misbehaved on the real robot, so we hand-tuned every loop on the hardware and found out exactly which effects the tidy linear model had quietly left out, like friction, small time delays and sensor noise. In the end it balanced its way through a full closed square-path mission. <a href="https://youtu.be/MEZGe73m3MY" target="_blank" rel="noopener">Watch the full mission run &rarr;</a></p>
           </div>
         </div>
         <div class="tabpanel" data-panel="re">
@@ -498,13 +498,13 @@ button{font:inherit; color:inherit; cursor:pointer}
         <div class="tabpanel" data-panel="ga">
           <div class="subhead">Technical skills</div>
           <ul class="list">
-            <li><strong>Classical control design</strong> &mdash; frequency-response methods, phase margin, lead/lag compensation and cascaded loop architecture.</li>
-            <li><strong>Modelling &amp; simulation</strong> &mdash; MATLAB/Simulink linearisation of an unstable plant.</li>
-            <li><strong>Theory-to-hardware transfer</strong> &mdash; diagnosing why a robot behaves differently than its model and closing the gap methodically.</li>
+            <li><strong>Classical control design.</strong> Frequency-response methods, phase margin, lead/lag compensation and building loops inside loops.</li>
+            <li><strong>Modelling and simulation.</strong> Linearising an unstable robot in MATLAB and Simulink.</li>
+            <li><strong>Getting theory onto hardware.</strong> Working out why a real robot behaves differently from its model, and closing that gap step by step.</li>
           </ul>
           <div class="subhead">Ways of working</div>
           <ul class="list">
-            <li>Systematic, patient tuning &mdash; changing one parameter at a time and reading the response.</li>
+            <li>Patient, systematic tuning: changing one parameter at a time and watching what the robot does.</li>
             <li>Splitting a four-person control problem into loops the team could design in parallel.</li>
           </ul>
         </div>
@@ -545,10 +545,10 @@ button{font:inherit; color:inherit; cursor:pointer}
       <div class="tabpanels">
         <div class="tabpanel active" data-panel="ov">
           <div class="prose">
-            <p>This is a <strong>5-axis robotic arm that sorts waste on its own</strong>, aimed at the kind of manual, and often unsafe, sorting done in low-resource areas. A camera looks down at the work area, an AI model identifies what each object is, and the arm picks it up and drops it in the right bin &mdash; for example separating electronic waste from everything else.</p>
-            <p>Before any building, we chose the concept properly. A morphological analysis compared grippers and drive options, and a torque calculation (a peak of roughly <strong>6.7&nbsp;N&middot;m</strong> at the shoulder) showed that affordable stepper motors simply couldn't lift the target load &mdash; so the arm is <strong>servo-driven</strong>, with each joint's motor sized to what that joint actually has to hold. The whole structure is 3D-printed, designed with the tolerances the printer can really hold.</p>
-            <p>To make the tip reach a chosen point in space, we used <strong>inverse kinematics</strong> &mdash; the maths that works out every joint angle from a desired end position. We fed the IKPy library a URDF robot model exported from our SolidWorks CAD, while a Raspberry Pi camera (calibrated against ArUco markers) converts what it sees into real-world X-Y coordinates for the arm to aim at. An AI image-recognition model then labels the object so the arm knows which bin it belongs in.</p>
-            <p>Two problems taught us the most, and both lived on the messy boundary between the digital model and the physical robot. First, the servos didn't actually go where they were told &mdash; each had its own offset and scaling &mdash; which we fixed with a measured <strong>per-motor calibration function</strong> that translates the computed angle into the correct command. Second, the servos' 180&deg; limits kept trapping the solver in dead-ends, so we moved those limits out of the model and handled them in our own code by seeding the solver with sensible starting guesses.</p>
+            <p>This is a <strong>5-axis robotic arm that sorts waste on its own</strong>, aimed at the kind of manual, and often unsafe, sorting that happens in low-resource areas. A camera looks down at the work area, an AI model works out what each object is, and the arm picks it up and drops it in the right bin, for example keeping electronic waste apart from everything else.</p>
+            <p>Before building anything, we took the time to choose the concept properly. A morphological analysis compared different grippers and ways of driving the joints, and a torque calculation (a peak of roughly <strong>6.7&nbsp;N&middot;m</strong> at the shoulder) made it clear that cheap stepper motors just couldn't lift the target load. So the arm ended up <strong>servo-driven</strong>, with each joint's motor sized to what that joint actually has to hold. The whole thing is 3D-printed, designed around the tolerances the printer can really hold.</p>
+            <p>To get the tip to a chosen point in space, we used <strong>inverse kinematics</strong>, the maths that works backwards from a target position to every joint angle. We fed the IKPy library a URDF robot model exported from our SolidWorks CAD, and a Raspberry Pi camera (calibrated against ArUco markers) turns what it sees into real-world X-Y coordinates for the arm to aim at. An AI image-recognition model then labels the object so the arm knows which bin it belongs in.</p>
+            <p>Two problems taught us the most, and both lived on the messy line between the digital model and the physical robot. First, the servos didn't actually go where they were told, since each one had its own offset and scaling. We fixed that with a measured <strong>per-motor calibration function</strong> that turns the computed angle into the right command. Second, the servos' 180&deg; limits kept trapping the solver in dead-ends, so we took those limits out of the model and handled them in our own code by giving the solver sensible starting guesses.</p>
           </div>
         </div>
         <div class="tabpanel" data-panel="re">
@@ -559,7 +559,7 @@ button{font:inherit; color:inherit; cursor:pointer}
             <div class="metric"><div class="val">5</div><span class="lab">Degrees of freedom</span></div>
           </div>
           <ul class="list">
-            <li><strong>Concept selection by calculation.</strong> Torque analysis (~6.7&nbsp;N&middot;m peak) ruled out affordable steppers and pointed to servos &mdash; sized per joint.</li>
+            <li><strong>Concept selection by calculation.</strong> Torque analysis (~6.7&nbsp;N&middot;m peak) ruled out cheap steppers and pointed to servos, sized per joint.</li>
             <li><strong>Inverse kinematics from CAD.</strong> Drove the end-effector to target coordinates using a URDF generated from the SolidWorks assembly.</li>
             <li><strong>AI classification.</strong> Sent camera images to an image-recognition model to label objects as E-waste or not, with a flexible category set.</li>
             <li><strong>Real-hardware calibration.</strong> Linear per-servo correction turned computed angles into accurate physical positions.</li>
@@ -568,14 +568,14 @@ button{font:inherit; color:inherit; cursor:pointer}
         <div class="tabpanel" data-panel="ga">
           <div class="subhead">Technical skills</div>
           <ul class="list">
-            <li><strong>Mechatronic integration</strong> &mdash; combining mechanics, electronics and AI into one working system.</li>
-            <li><strong>Inverse kinematics &amp; URDF modelling</strong> &mdash; turning a CAD assembly into a robot the software can solve for.</li>
-            <li><strong>Working with imperfect hardware</strong> &mdash; measuring and calibrating the difference between nominal and real servo behaviour.</li>
-            <li><strong>CAD for 3D printing</strong> &mdash; designing parts with the tolerances the print process actually holds.</li>
+            <li><strong>Mechatronic integration.</strong> Bringing mechanics, electronics and AI together into one working system.</li>
+            <li><strong>Inverse kinematics and URDF modelling.</strong> Turning a CAD assembly into a robot the software can actually solve for.</li>
+            <li><strong>Working with imperfect hardware.</strong> Measuring and calibrating the difference between what a servo is told to do and what it really does.</li>
+            <li><strong>CAD for 3D printing.</strong> Designing parts around the tolerances the print process can actually hold.</li>
           </ul>
           <div class="subhead">Ways of working</div>
           <ul class="list">
-            <li>Debugging across the hardware/software boundary &mdash; where the biggest learning of the project lived.</li>
+            <li>Debugging across the line between hardware and software, which is where most of the real learning on this project happened.</li>
             <li>Coordinating a five-person team through concept selection to a finished demonstrator.</li>
           </ul>
         </div>
